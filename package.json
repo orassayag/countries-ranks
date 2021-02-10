@@ -1,0 +1,35 @@
+{
+  "name": "countries-ranks",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A client application built by the Thu Nghiem, and re-built to display the countries ranks. Thanks to Thu Nghiem from devchallenges.io",
+  "keywords": [
+    "world",
+    "countries",
+    "ranks"
+  ],
+  "license": "UNLICENSED",
+  "author": "Or Assayag <orassayag@gmail.com>",
+  "contributors": [
+    {
+      "name": "Or Assayag",
+      "email": "orassayag@gmail.com",
+      "url": "https://github.com/orassayag"
+    }
+  ],
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "next": "10.0.6",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
+  }
+}
