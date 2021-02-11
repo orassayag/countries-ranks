@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import styles from './Layout.module.css';
 import { faGlobeEurope } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Brightness6Rounded } from '@material-ui/icons';
+import styles from './Layout.module.css';
 
-const Layout = ({ children, title = "Countries Ranks" }) => {
+const Layout = ({ children, title = 'Countries Ranks' }) => {
     const [theme, setTheme] = useState('light');
     const setThemeState = (theme) => {
         setTheme(theme);
@@ -54,7 +54,7 @@ const Layout = ({ children, title = "Countries Ranks" }) => {
             <footer className={styles.footer}>
                 Or Assayag © Thanks to Thu Nghiem from devchallenges.io
             </footer>
-        </div >
+        </div>
     );
 };
 

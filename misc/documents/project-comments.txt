@@ -1,0 +1,52 @@
+Hi Thu, How are you?
+My name is Or Assayag, I'm a full stack web developer from Israel for the past 13 years. I’ve been most of my time doing .NET C# and basic client side, and in the past 3 years I've been developing in Node.js and React.js.
+
+I've seen your 'Full Project-based Tutorial - React + Next.js' tutorial (https://www.youtube.com/watch?v=v8o9iJU5hEA), and let me say, well done! You create a very good project testing both static and server side rendering (in the start and in the end of the video). I really learned a lot from the video, and also built the project along with, and successfully deployed it. It all works as the video displayed, almost a year and a half after you uploaded the video.
+
+I watched your video because I have experience in React.js and Node.js but I don't have any experience in Next.js (except from their basic tutorial in there official site, and I wanted to see how to build a real project with Next.js.
+
+Saying this, there are a few issues I would like to suggest to improve the project, and maybe will inspire you to do some "Part 2" of the video, for fixes and more advanced concepts for anyone who wants to improve the project you built. Here are some points for fix and upgrade your project:
+
+-In the end of the video, you converted getServerSideProps to getStaticPaths [id].js file, to improve performance in the production environment. It's much appreciated and it's very important, but doing this change in the local environment, it became impossible to work on the project during a very long loading time. Most of the developers need to improve and fix bugs in their application, so they need fast reload of the project and they need to keep the fast load. I would suggest keeping the 2 logics code and to use NODE_ENV=development and NODE_ENV=production to split theses to functions. One for development, and one for production. This way you could switch from development to production and vice versa and work fast on development.
+
+-During all the video as I code along with you, I suffered from performance issues, since I had to load 250 countries all the time with all the pictures. To improve performance and to load very fast, I would suggest you 2 main things that happen a lot in real world web applications:
+A. Convert the CountriesTable to display a pager, displaying maximum 10-20 countries per page. Since you display a flag and a lot of details, Most of the users will not really go over all the 250 countries from top to bottom. It's better to use a pager, which will update along the filtering, and will suite all the different sortings. This is an advanced topic, but a pager is a really basic thing in these days applications.
+B. Each time you use the "flag" parameter as a source of an image, you make an http separately call to the server to fetch the flag of the country. Each time you do 250 calls to bring all the flags sources for all the countries. Instead of that, consider using css-sprite. If you don't know what it is, I really suggest you read about it. If you already know it, why not use it here to improve the performance? In your sources folder, add a one image of all the sources (yes, downloading 250 flags of countries it really takes time, but it's a one time job and your viewers will appreciate it a lot) to load all the flags only once in one call. It's also a basic thing these days for big applications that use a lot of images (I would also use div with background-image instead of img tag but it's totally up to you).
+
+-Another really basic things these days is not to write in CSS, but to write in SASS (SCSS files), as you probably know it. It will reduce the amount of code you write, and will give a better look as a real life project. Most developers do not use pure CSS these days. Next.js has support for that out of the box without any configuration, as far as I know. I would suggest that you do in "Part 2" tutorial, a section to convert all the CSS codes to SCSS.
+
+-Another important part in your tutorial that you keep doing, and it's not a really good practice, is to copy paste your code and duplicate your code, instead of creating components and passing parameters for it. For example, in the details_panel in the [id].js page, you duplicate all the details, instead of creating a component called "detail" that will contain the label and value, and with one line to reduce the amount of code. This is a real world case these days. In Part 2 I would at least demonstrate how to convert one section into components, and let the users do the rest alone.
+
+-A good practice is to build one end point (let's say, api folder, and inside it, api.js) for all 3rd party data calls, instead of duplicating it from one page to another. It's also common to use settings.js or config.js files to place there all the endpoints of the API you use, instead of duplicating them in parts of the application.
+
+-There are a few things you forgot to do or you didn't do because of lack of time? (Although I think YouTube doesn't limit the video length anymore these days):
+-In the index.js page, you forgot to update the 'Found {countries.length} countries' part with the 'filteredCountries' to display an updated value of the filtered countries.
+-In the [id].js page, you accidentally override the Subregion property by the other properties of the country, so you don't have a Subregion property in the page anymore.
+-It will really be good to put the css variables you copy in the sources folder, instead of sending your viewers to an unknown page.
+-Better to stick with one approach to write class names (instead of "themeSwitcher", use "theme_switcher" like you did in all of the parts in the project, for example).
+-In the [id].js the 'details_panel_row' class is to add 'text-align: right;' as for some countries with a long text, such as currencies, has a long text, and it's not look so good. Take a look at 'country/ZWE' page.
+-Also, in the [id].js, some Gini don't display any value, not even 0. Again, look at the 'country/ZWE' page.
+-As you were busy for making it mobile-first approach in the project, you probably forgot to worry about stuff for the desktop users, such as adding "cursor: pointer" for the countries table, "world ranks" logo on the top, on the theme-switcher button, and more places.
+-In [id].js, the "Native name" is not available for any country.
+-In the countries table, you need to give absolute height for each row, as the height of each row is not equal at the moment.
+-As for real world search, you probably want to add timeout of 1 second after the last key hit, before calling the server for filtering request, and not to go to the server for each key the user make (this is how a real world filtering application works many times) to reduce the amount of requests to the database and to the backend.
+-In the tutorial design in the countries table there is a gini progress bar, I don't know why you skipped it, but I think it's very good practice to do it for the viewers.
+-In [id].js page, you forgot to add 'key={name}' to the borders map, and still have a console error for missing key there.
+
+-What I was missing in your tutorial is more advanced Next.js configuration, for example, to install ESLint rules on Next.js project, not to miss ; where needed, and to make good intellisense to complete the paths of the import.
+
+-When you first load the project, there is a weird behavior of the UI material icons, it's not initialize and for a second it looks weird. In real world applications there is a loader of 2 seconds before revealing the content of the page, and it would be a great practice to teach the viewers how to place a loader while waiting for the SSR data and to the CSS to be initiated.
+
+-It's a good practice to show how to customize the error page in case of URL that do not exist, such as "country/ds" for example.
+
+I have other issues with the project that I think need to be improved, but I think this is enough for now. Don't get me wrong, after all my comments, points, and issues, your projects are very very good at the moment. I only want to suggest you maybe take a "Part 2" video with some of these fixes and upgrades.
+
+Hope I encouraged you to continue doing and developing more stuff in the future.
+Would love to hear from you, and invite you to follow me as I follow you,
+
+Or Assayag.
+
+* Or Assayag <orassayag@gmail.com>
+* GitHub: https://github.com/orassayag
+* StackOverFlow: https://stackoverflow.com/users/4442606/or-assayag?tab=profile
+* LinkedIn: https://il.linkedin.com/in/orassayag

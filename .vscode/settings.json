@@ -5,6 +5,14 @@
         "Nghiem",
         "Selinger",
         "Vercel",
-        "devchallenges"
-    ]
+        "devchallenges",
+        "orassayag"
+    ],
+    "search.exclude": {
+		"**.next/": true,
+		".next": true,
+        "/.next/": true,
+        "**/.next": true
+	},
+    "formatFiles.excludePattern": "**/node_modules,**/.vscode,**/dist/**,**/.chrome,**/misc,**/.next"
 }

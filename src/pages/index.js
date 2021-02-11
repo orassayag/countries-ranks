@@ -1,11 +1,10 @@
-import Layout from "../components/Layout/Layout";
 import { useState } from 'react';
-import SearchInput from '../components/SearchInput/SearchInput';
+import Layout from '../components/Layout/Layout';
 import CountriesTable from '../components/CountriesTable/CountriesTable';
-import styles from "../styles/Home.module.css";
+import SearchInput from '../components/SearchInput/SearchInput';
+import styles from '../styles/Home.module.css';
 
 export default function Home({ countries }) {
-
   const [keyword, setKeyword] = useState('');
   const filteredCountries = countries.filter(country =>
     country.name.toLowerCase().includes(keyword) ||
@@ -26,7 +25,7 @@ export default function Home({ countries }) {
       </div>
         <div className={styles.input}>
           <SearchInput
-            placeholder="Filter by Name, Region or SubRegion"
+            placeholder='Filter by Name, Region or SubRegion'
             onChange={onInputChange}
           />
         </div>
@@ -39,7 +38,7 @@ export default function Home({ countries }) {
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch("https://restcountries.eu/rest/v2/all");
+  const res = await fetch('https://restcountries.eu/rest/v2/all');
   const countries = await res.json();
   return {
     props: {

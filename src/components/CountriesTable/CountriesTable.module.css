@@ -84,15 +84,19 @@
 }
 
 @media screen and (max-width: 720px) {
-    .flag, .heading_flag {
+
+    .flag,
+    .heading_flag {
         display: none;
     }
 
-    .area, .heading_area {
+    .area,
+    .heading_area {
         display: none;
     }
 
-    .gini, .heading_gini {
+    .gini,
+    .heading_gini {
         display: none;
     }
 }
