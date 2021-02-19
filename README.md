@@ -40,6 +40,11 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+## Credits
+
+Thanks to Thu Nghiem from devchallenges.io from his toturial on https://www.youtube.com/watch?v=v8o9iJU5hEA
+and this code from https://github.com/nghiemthu/world-ranks
+
 ## Author
 
 * **Or Assayag** - *Initial work* - [orassayag](https://github.com/orassayag)
@@ -51,8 +56,3 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## License
 
 This application has UNLICENSED License.
-
-## Credits
-
-Thanks to Thu Nghiem from devchallenges.io from his toturial on https://www.youtube.com/watch?v=v8o9iJU5hEA
-and this code from https://github.com/nghiemthu/world-ranks
