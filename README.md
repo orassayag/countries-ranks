@@ -1,7 +1,7 @@
 # Countries Ranks
 
-Built in February 2021. A client application built by the Thu Nghiem, and re-built to display the countries ranks.
-Thanks to Thu Nghiem from devchallenges.io from his toturial on https://www.youtube.com/watch?v=v8o9iJU5hEA
+Built in February 2021. A client application built by Thu Nghiem, and re-built to display the countries' ranks.
+Thanks to Thu Nghiem from devchallenges.io from his tutorial on https://www.youtube.com/watch?v=v8o9iJU5hEA
 and this code from https://github.com/nghiemthu/world-ranks
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
@@ -41,7 +41,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Credits
 
-Thanks to Thu Nghiem from devchallenges.io from his toturial on https://www.youtube.com/watch?v=v8o9iJU5hEA
+Thanks to Thu Nghiem from devchallenges.io from his tutorial on https://www.youtube.com/watch?v=v8o9iJU5hEA
 and this code from https://github.com/nghiemthu/world-ranks
 
 ## Author
@@ -54,4 +54,4 @@ and this code from https://github.com/nghiemthu/world-ranks
 
 ## License
 
-This application has UNLICENSED License.
+This application has an UNLICENSED License.
