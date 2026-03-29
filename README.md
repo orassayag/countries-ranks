@@ -1,57 +1,179 @@
 # Countries Ranks
 
-Built in February 2021. A client application built by Thu Nghiem, and re-built to display the countries' ranks.
-Thanks to Thu Nghiem from devchallenges.io from his tutorial on https://www.youtube.com/watch?v=v8o9iJU5hEA
-and this code from https://github.com/nghiemthu/world-ranks
+A Next.js application that displays countries data, lets users filter by text, and view detailed country pages with bordering countries.
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Built in February 2021. Inspired by Thu Nghiem's world ranks tutorial and project.
+
+## Features
+
+- List of all countries with flags, population, area, and Gini index
+- Client-side filtering by country name, region, or subregion
+- Sortable table columns (name, population, area, Gini)
+- Dynamic country detail page (`/country/[id]`)
+- Border countries preview on country details
+- Light/dark theme toggle persisted in `localStorage`
+- Static generation with Next.js `getStaticProps` / `getStaticPaths`
+
+## Architecture Overview
+
+```mermaid
+graph TB
+    User[Browser User]
+    NextApp[Next.js App]
+    HomePage[Index Page]
+    CountryPage[Country Details Page]
+    Components[Reusable Components]
+    RestCountries[REST Countries API]
+
+    User --> NextApp
+    NextApp --> HomePage
+    NextApp --> CountryPage
+    HomePage --> Components
+    CountryPage --> Components
+    HomePage --> RestCountries
+    CountryPage --> RestCountries
+```
+
+## System Flow
+
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant N as Next.js
+    participant API as restcountries.eu
+
+    Note over U,API: Home Page Build
+    N->>API: GET /rest/v2/all (build time)
+    API-->>N: Countries array
+    N-->>U: Pre-rendered home page
+
+    Note over U,API: Country Detail Build
+    N->>API: GET /rest/v2/all (build time paths)
+    API-->>N: alpha3Code list
+    N->>API: GET /rest/v2/alpha/{id} (per country)
+    API-->>N: Country details
+    N-->>U: Static detail page
+
+    Note over U,N: Runtime Interaction
+    U->>N: Type in search input
+    N-->>U: Filtered table rows
+    U->>N: Click sortable column
+    N-->>U: Reordered rows
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 14+ (or any version compatible with Next.js 10)
+- npm
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
+git clone https://github.com/orassayag/countries-ranks-github.git
+cd countries-ranks-github
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+3. Run development server:
+```bash
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+4. Open:
+`http://localhost:3000`
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Available Scripts
 
-## Learn More
+### Development
+```bash
+npm run dev
+```
+Starts local development server.
 
-To learn more about Next.js, take a look at the following resources:
+### Production Build
+```bash
+npm run build
+```
+Builds optimized production output.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Production Start
+```bash
+npm run start
+```
+Runs production server from built assets.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+```text
+countries-ranks-github/
+├── src/
+│   ├── components/
+│   │   ├── CountriesTable/
+│   │   ├── Layout/
+│   │   └── SearchInput/
+│   ├── pages/
+│   │   ├── country/
+│   │   │   ├── [id].js
+│   │   │   └── Country.module.css
+│   │   ├── _app.js
+│   │   └── index.js
+│   └── styles/
+│       ├── globals.css
+│       └── Home.module.css
+├── .github/
+├── package.json
+├── CONTRIBUTING.md
+├── INSTRUCTIONS.md
+└── README.md
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Data Source
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The app currently fetches countries data from:
+
+- `https://restcountries.eu/rest/v2/all`
+- `https://restcountries.eu/rest/v2/alpha/{id}`
+
+Note: if this API is unavailable, static generation may fail during build.
+
+## Troubleshooting
+
+### `npm install` fails
+- Delete `node_modules` and `package-lock.json`, then run `npm install` again.
+
+### Build fails while fetching countries
+- Verify internet access.
+- Confirm REST Countries endpoint availability.
+- Retry `npm run build`.
+
+### Theme does not persist
+- Ensure browser allows `localStorage`.
+- Check private/incognito restrictions.
+
+## Contributing
+
+Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines and [INSTRUCTIONS.md](INSTRUCTIONS.md) for setup and implementation notes.
 
 ## Credits
 
-Thanks to Thu Nghiem from devchallenges.io from his tutorial on https://www.youtube.com/watch?v=v8o9iJU5hEA
-and this code from https://github.com/nghiemthu/world-ranks
+- Thu Nghiem tutorial: <https://www.youtube.com/watch?v=v8o9iJU5hEA>
+- Original project inspiration: <https://github.com/nghiemthu/world-ranks>
 
 ## Author
 
-* **Or Assayag** - *Initial work* - [orassayag](https://github.com/orassayag)
-* Or Assayag <orassayag@gmail.com>
-* GitHub: https://github.com/orassayag
-* StackOverFlow: https://stackoverflow.com/users/4442606/or-assayag?tab=profile
-* LinkedIn: https://linkedin.com/in/orassayag
+- **Or Assayag** - [orassayag](https://github.com/orassayag)
+- Or Assayag <orassayag@gmail.com>
+- GitHub: <https://github.com/orassayag>
+- StackOverflow: <https://stackoverflow.com/users/4442606/or-assayag?tab=profile>
+- LinkedIn: <https://linkedin.com/in/orassayag>
 
 ## License
 
-This application has an UNLICENSED license.
+This project is currently `UNLICENSED`.
