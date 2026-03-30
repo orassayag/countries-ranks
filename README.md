@@ -176,4 +176,4 @@ Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for contributi
 
 ## License
 
-This project is currently `UNLICENSED`.
+This project is licensed under the MIT License.
