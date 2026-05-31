@@ -1,19 +1,27 @@
 {
-    "cSpell.words": [
-        "Assayag",
-        "Gini",
-        "Neighbouring",
-        "Nghiem",
-        "Selinger",
-        "Vercel",
-        "devchallenges",
-        "orassayag"
-    ],
-    "search.exclude": {
-		"**.next/": true,
-		".next": true,
-        "/.next/": true,
-        "**/.next": true
-	},
-    "formatFiles.excludePattern": "**/node_modules,**/.vscode,**/dist/**,**/.chrome,**/misc,**/.next"
+  "cSpell.words": [
+    "Assayag",
+    "devchallenges",
+    "Gini",
+    "Neighbouring",
+    "Nghiem",
+    "orassayag",
+    "restcountries",
+    "Selinger",
+    "Vercel"
+  ],
+  "cSpell.ignorePaths": [
+    "coverage",
+    "node_modules",
+    "dist",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml"
+  ],
+  "search.exclude": {
+    "**.next/": true,
+    ".next": true,
+    "/.next/": true,
+    "**/.next": true
+  },
+  "formatFiles.excludePattern": "**/node_modules,**/.vscode,**/dist/**,**/.chrome,**/misc,**/.next"
 }

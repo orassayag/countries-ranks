@@ -2,18 +2,47 @@
   "name": "countries-ranks",
   "version": "0.1.0",
   "private": false,
+  "description": "A Next.js application that displays countries data, allows users to filter by text search, and view detailed country pages including bordering nations. Inspired by Thu Nghiem's world ranks tutorial and project. with responsive UI, modern styling, and scalable architecture with fast performance",
+  "keywords": [
+    "nextjs",
+    "react",
+    "countries-api",
+    "country-data",
+    "rest-api",
+    "frontend",
+    "web-app",
+    "dynamic-routing",
+    "typescript",
+    "javascript",
+    "responsive-design",
+    "search-filter",
+    "border-countries",
+    "ui-ux",
+    "spa",
+    "static-site",
+    "api-integration",
+    "learning-project",
+    "tutorial",
+    "vercel"
+  ],
+  "homepage": "https://github.com/orassayag/countries-ranks#readme",
+  "bugs": {
+    "url": "https://github.com/orassayag/countries-ranks/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/orassayag/countries-ranks.git"
   },
-  "description": "A client application built by Thu Nghiem, and re-built to display the countries ranks. Thanks to Thu Nghiem from devchallenges.io",
-  "keywords": [
-    "world",
-    "countries",
-    "ranks"
-  ],
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/orassayag"
+  },
   "license": "MIT",
-  "author": "Or Assayag <orassayag@gmail.com>",
+  "author": {
+    "name": "Or Assayag",
+    "email": "orassayag@gmail.com",
+    "url": "https://github.com/orassayag"
+  },
   "contributors": [
     {
       "name": "Or Assayag",
@@ -21,9 +50,30 @@
       "url": "https://github.com/orassayag"
     }
   ],
+  "type": "commonjs",
+  "main": "src/pages/index.js",
+  "files": [
+    ".github",
+    ".vscode",
+    "misc",
+    "public",
+    "src",
+    ".eslintrc.js",
+    ".gitignore",
+    ".prettierrc",
+    "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "INSTRUCTIONS.md",
+    "LICENSE",
+    "package-lock.json",
+    "package.json",
+    "README.md",
+    "SECURITY.md"
+  ],
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
+    "dev": "next dev",
     "start": "next start"
   },
   "dependencies": {
@@ -35,5 +85,6 @@
     "next": "10.0.6",
     "react": "17.0.1",
     "react-dom": "17.0.1"
-  }
+  },
+  "devDependencies": {}
 }
